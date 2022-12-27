@@ -6,7 +6,8 @@
     "type": "module",
     "scripts": {
         "test": "echo \"Run test\"",
-        "build": "node ./src/index && echo \"Build succeeds\""
+        "build": "node ./src/index && echo \"Build succeeds\"",
+        "version:patch": "npm version patch"
     },
     "author": "danpacho",
     "devDependencies": {
