@@ -5,8 +5,9 @@
     "main": "index.js",
     "type": "module",
     "scripts": {
-        "test": "echo \"Run test\"",
+        "test": "node ./src/test &&  echo \"Run test\"",
         "build": "node ./src/index && echo \"Build succeeds\"",
+        "ci": "pnpm test && pnpm build",
         "version:patch": "npm version patch"
     },
     "author": "danpacho",
