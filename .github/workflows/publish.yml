@@ -51,3 +51,4 @@ jobs:
               name: Publish package to npm
               with:
                   token: ${{ secrets.NPM_TOKEN }}
+                  access: public
