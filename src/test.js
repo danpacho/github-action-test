@@ -14,7 +14,7 @@ const toCapitalCase = (string) =>
 const testRunner = (tests, color = "red") => {
     const testChalk = chalk.white.bold;
     const testLogger = (message, chalkOption) =>
-        console.log(testChalk[chalkOption](`   ${message}   `));
+        console.log(testChalk[chalkOption](`    ${message}    `));
 
     tests.forEach((test, order) => {
         testLogger(`test${order + 1}: ${test}`, `bg${toCapitalCase(color)}`);
