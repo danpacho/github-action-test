@@ -44,9 +44,6 @@ jobs:
             - name: CI
               run: pnpm ci
 
-            - name: Update package version
-              run: pnpm version:patch
-
             - uses: JS-DevTools/npm-publish@v1
               name: Publish package to npm
               with:
