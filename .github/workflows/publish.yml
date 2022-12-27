@@ -38,13 +38,16 @@ jobs:
                   restore-keys: |
                       ${{ runner.os }}-pnpm-store-
 
-            - name: Install dependencies
+            - name: Install package dependencies
               run: pnpm install
 
             - name: CI
               run: pnpm ci
 
+            - name: Update package version
+              run: pnpm version:patch
+
             - uses: JS-DevTools/npm-publish@v1
-              name: Publish package
+              name: Publish package to npm
               with:
                   token: ${{ secrets.NPM_TOKEN }}

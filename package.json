@@ -4,6 +4,7 @@
     "description": "github action test",
     "main": "index.js",
     "type": "module",
+    "private": false,
     "scripts": {
         "test": "node ./src/test &&  echo \"Run test\"",
         "build": "node ./src/index && echo \"Build succeeds\"",
