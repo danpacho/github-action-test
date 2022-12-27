@@ -32,4 +32,4 @@ version-resolver:
 template: |
     $CHANGES
 
-    **Full Changelog**: https://github.com/danpacho/tailwindest/compare/$PREVIOUS_TAG...v$RESOLVED_VERSION
+    **Full Changelog**: https://github.com/danpacho/gh-action-test/compare/$PREVIOUS_TAG...v$RESOLVED_VERSION
