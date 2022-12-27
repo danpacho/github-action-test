@@ -10,7 +10,7 @@
 1. `codeql.yml`
 
     - `"javascript"` 코드 퀄리티 관리
-    - `master` branch에 commit되는 순간 실행
+    - `main` branch에 commit되는 순간 실행
 
 2. `publish.yml`
 
@@ -19,12 +19,12 @@
 
 3. `release.yml`
 
-    - `master` branch에 commit되는 순간 혹은 pull request merge 되는 순간 실행
+    - `main` branch에 commit되는 순간 혹은 pull request merge 되는 순간 실행
     - release 변경 내역, branch의 title과 tag를 기준으로 자동 작성
 
 4. `size-limit.yml`
 
-    - pull request에 의해 `master` branch에 merge되는 순간 실행
+    - pull request에 의해 `main` branch에 merge되는 순간 실행
     - 패키지의 gzip bundle size를 보고 후 제한량 비교 및 사이즈 변경점 체크
 
 ## Workflows Helpers
