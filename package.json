@@ -13,5 +13,11 @@
     "author": "danpacho",
     "devDependencies": {
         "chalk": "^5.2.0"
-    }
+    },
+    "size-limit": [
+        {
+            "path": "src/index.js",
+            "limit": "5KB"
+        }
+    ]
 }
