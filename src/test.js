@@ -23,4 +23,4 @@ const testRunner = (tests, color = "red") => {
 
 const tests = ["good", "too good", "hello test"];
 
-testRunner(tests, "yellow");
+testRunner(tests, "red");
