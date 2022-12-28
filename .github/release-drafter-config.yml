@@ -11,24 +11,30 @@ categories:
           - "bugfix"
           - "bug"
     - title: "Breaking 🤯"
-      label: "breaking"
+      labels:
+          - "breaking"
+    - title: "Etc 🍦"
+      labels:
+          - "etc"
 category-template: "### $TITLE"
 change-template: "- $TITLE @$AUTHOR (#$NUMBER)"
-change-title-escapes: '\<*_&' # You can add # and @ to disable mentions, and add ` to disable code blocks.
+change-title-escapes: '\<*_&'
 no-changes-template: "No changes"
 exclude-labels:
     - "skip-changelog"
 version-resolver:
     major:
         labels:
-            - "major"
+            - "breaking"
     minor:
         labels:
-            - "minor"
+            - "feature"
+            - "enhancement"
     patch:
         labels:
             - "patch"
-    default: patch
+            - "etc"
+    default: "patch"
 template: |
     $CHANGES
 
