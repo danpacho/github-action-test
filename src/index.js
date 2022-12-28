@@ -35,6 +35,7 @@ const getVersionHeader = ({ major, minor, patch }) =>
  * @param {string} versionString
  */
 const logVersion = (versionString) => {
+    console.log(chalk.bgWhite.yellow.bold(versionString));
     console.log(chalk.bgYellowBright.black.bold(versionString));
 };
 
