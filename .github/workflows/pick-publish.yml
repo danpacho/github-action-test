@@ -61,7 +61,7 @@ jobs:
                   git branch release
                   git checkout release
                   git add "package.json"
-                  git commit -m "bump: update package version to v${{ env.VERSION_TAG }}"
+                  git commit -m "bump: update package version to ${{ env.VERSION_TAG }}"
                   git tag ${{ env.VERSION_TAG }}
 
             - uses: JS-DevTools/npm-publish@v1
