@@ -40,10 +40,10 @@ jobs:
                   restore-keys: |
                       ${{ runner.os }}-pnpm-store-
 
-              name: Install package dependencies
+            - name: Install package dependencies
               run: pnpm install
 
-              name: Test & Build
+            - name: Test & Build
               run: pnpm ci
 
             - name: Setup git configuration
