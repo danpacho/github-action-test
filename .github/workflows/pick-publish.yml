@@ -58,6 +58,8 @@ jobs:
 
             - name: Commit package version
               run: |
+                  git branch release
+                  git checkout release
                   git add "package.json"
                   git commit -m "bump: update package version to v${{ env.VERSION_TAG }}"
                   git tag ${{ env.VERSION_TAG }}
@@ -72,4 +74,4 @@ jobs:
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               run: |
-                  git push origin main && git push main --tags
+                  git push origin feature && git push origin feature --tags
