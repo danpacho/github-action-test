@@ -74,4 +74,4 @@ jobs:
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               run: |
-                  git push origin feature && git push origin feature --tags
+                  git push origin release && git push origin release --tags
