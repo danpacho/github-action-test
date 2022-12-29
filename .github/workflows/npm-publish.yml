@@ -1,10 +1,10 @@
-name: Publish package manually
+name: Publish package on version commit
 on:
-    workflow_dispatch:
-        inputs:
-            release-type:
-                description: "Release type: patch | minor | major"
-                required: true
+    push:
+        branches:
+            - main
+        tags:
+            - v*.*.*
 jobs:
     release:
         runs-on: ubuntu-latest
@@ -44,31 +44,8 @@ jobs:
             - name: Test & Build
               run: pnpm ci
 
-            - name: Setup git configuration
-              run: |
-                  git config --global user.email "danpa725@cau.ac.kr"
-                  git config --global user.name "danpacho"
-
-            - name: Bump package release version
-              run: |
-                  echo "VERSION_TAG=$(npm --no-git-tag-version version $RELEASE_TYPE)" >> $GITHUB_ENV
-                  echo "RELEASE_TAG=latest" >> $GITHUB_ENV
-              env:
-                  RELEASE_TYPE: ${{ github.event.inputs.release-type }}
-
-            - name: Commit package version
-              run: |
-                  git add "package.json"
-                  git commit -m "bump: update package version to ${{ env.VERSION_TAG }}"
-
             - uses: JS-DevTools/npm-publish@v1
               name: Publish package to npm
               with:
                   access: "public"
                   token: ${{ secrets.NPM_TOKEN }}
-
-            - name: Push changes to repository
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-              run: |
-                  git push -f origin main
